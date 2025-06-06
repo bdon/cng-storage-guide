@@ -16,12 +16,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v3
-        with:
-          node-version-file: 'app/.nvmrc'
       - run: npm ci && npm run build
       - uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/dist
+          publish_dir: ./dist
           force_orphan: true
