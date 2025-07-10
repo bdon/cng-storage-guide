@@ -1,34 +1,40 @@
 - name: Amazon S3
+  slug: amazon-s3
   cost_per_gb_stored: 0.023
   cost_per_gb_egress: 0.09
   currency: USD
   pricing_page: https://aws.amazon.com/s3/pricing/
 
 - name: Google Cloud Platform
+  slug: google-cloud
   cost_per_gb_stored: 0.020
   cost_per_gb_egress: 0.12
   currency: USD
   pricing_page: https://cloud.google.com/storage/pricing
 
 - name: Microsoft Azure Blob Storage
+  slug: microsoft-azure
   cost_per_gb_stored: 0.018
   cost_per_gb_egress: 0.087
   currency: USD
   pricing_page: https://azure.microsoft.com/en-us/pricing/details/storage/blobs/
 
 - name: Cloudflare R2
+  slug: cloudflare-r2
   cost_per_gb_stored: 0.015
   cost_per_gb_egress: 0
   currency: USD
   pricing_page: https://developers.cloudflare.com/r2/pricing/
 
 - name: OVH Cloud Object Storage
+  slug: ovh-cloud
   cost_per_gb_stored: 0.0081103
   cost_per_gb_egress: 0.011
   currency: USD
   pricing_page: https://us.ovhcloud.com/public-cloud/prices/
 
 - name: Hetzner Object Storage
+  slug: hetzner
   cost_per_gb_stored: 0.00499
   cost_per_gb_egress: 0.001
   currency: EUR

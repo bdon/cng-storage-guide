@@ -1,7 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const providers = await getCollection("providers");
 ---
 
 <Layout>
-	Hello World
+	<table>
+		<tbody>
+		{
+	    providers.map((provider) => <tr>
+				<td>{provider.data.name}</td>
+				<td>{provider.data.cost_per_gb_stored}</td>
+	    </tr>)
+	  }
+		</tbody>
+	</table>
 </Layout>
