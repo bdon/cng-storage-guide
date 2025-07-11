@@ -1,19 +1,36 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import CostComponent from "../components/CostComponent.tsx";
 
 const providers = await getCollection("providers");
 ---
 
 <Layout>
+	<h1>
+		Cloud-Native Geospatial Storage Cheatsheet
+	</h1>
+	<p>
+		This is a collaboratively maintained resource of cloud storage platforms.
+		Object storage is a primitive of the web that makes open data simple and affordable to publish.
+	</p>
+	<p>
+		S3-compatible object stores can be used with tools like the aws cli and rclone.
+	</p>
+	<CostComponent client:only="solid-js" providers={providers}/>
 	<table>
 		<tbody>
 		{
 	    providers.map((provider) => <tr>
 				<td>{provider.data.name}</td>
 				<td>{provider.data.cost_per_gb_stored}</td>
+				<td>{provider.data.cost_per_gb_egress}</td>
+				<td><a href={provider.data.pricing_page} target="_blank">pricing</a></td>
 	    </tr>)
 	  }
 		</tbody>
 	</table>
+	<p>
+		Free account-level allowances are not included. 
+	</p>
 </Layout>
