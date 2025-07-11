@@ -7,6 +7,8 @@ const providers = defineCollection({
 	schema: z.object({
 		name: z.string(),
 		cost_per_gb_stored: z.number(),
+		cost_per_gb_egress: z.number(),
+		pricing_page: z.string()
 	}),
 });
 
