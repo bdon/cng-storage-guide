@@ -39,3 +39,66 @@
   cost_per_gb_egress: 0.001
   currency: EUR
   pricing_page: https://www.hetzner.com/storage/object-storage/
+
+- name: Source Cooperative
+  slug: source-coop
+  cost_per_gb_stored: 0
+  cost_per_gb_egress: 0
+  currency: USD
+  pricing_page: https://source.coop
+
+- name: Tigris Data
+  slug: tigris-data
+  cost_per_gb_stored: 0.02
+  cost_per_gb_egress: 0
+  currency: USD
+  pricing_page: https://www.tigrisdata.com/docs/pricing/
+
+- name: Backblaze B2
+  slug: backblaze-b2
+  cost_per_gb_stored: 0.006
+  cost_per_gb_egress: 0.01
+  currency: USD
+  pricing_page: https://www.backblaze.com/cloud-storage/pricing
+
+- name: Scaleway Object Storage
+  slug: scaleway-object-storage
+  cost_per_gb_stored: 0.0146
+  cost_per_gb_egress: 0.01
+  currency: EUR
+  pricing_page: https://www.scaleway.com/en/pricing/storage/
+
+- name: Bunny.net Object Storage
+  slug: bunny-storage
+  cost_per_gb_stored: 0.01
+  cost_per_gb_egress: 0.01
+  currency: USD
+  pricing_page: https://bunny.net/pricing/
+
+- name: DigitalOcean Object Storage
+  slug: digitalocean
+  cost_per_gb_stored: 0.02
+  cost_per_gb_egress: 0.01
+  currency: USD
+  pricing_page: https://www.digitalocean.com/pricing/spaces-object-storage
+
+- name: Vultr Object Storage
+  slug: vultr
+  cost_per_gb_stored: 0.018
+  cost_per_gb_egress: 0.010
+  currency: USD
+  pricing_page: https://www.vultr.com/pricing/#object-storage
+
+- name: Linode Object Storage
+  slug: linode
+  cost_per_gb_stored: 0.02
+  cost_per_gb_egress: 0.005
+  currency: USD
+  pricing_page: https://www.linode.com/products/object-storage/
+
+- name: Wasabi
+  slug: wasabi
+  cost_per_gb_stored: 0.0068
+  cost_per_gb_egress: 0
+  currency: USD
+  pricing_page: https://wasabi.com/pricing/faq
