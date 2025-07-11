@@ -12,7 +12,7 @@
   currency: USD
   pricing_page: https://cloud.google.com/storage/pricing
 
-- name: Microsoft Azure Blob Storage
+- name: Microsoft Azure
   slug: microsoft-azure
   cost_per_gb_stored: 0.018
   cost_per_gb_egress: 0.087
@@ -26,14 +26,14 @@
   currency: USD
   pricing_page: https://developers.cloudflare.com/r2/pricing/
 
-- name: OVH Cloud Object Storage
+- name: OVH Cloud
   slug: ovh-cloud
   cost_per_gb_stored: 0.0081103
   cost_per_gb_egress: 0.011
   currency: USD
   pricing_page: https://us.ovhcloud.com/public-cloud/prices/
 
-- name: Hetzner Object Storage
+- name: Hetzner
   slug: hetzner
   cost_per_gb_stored: 0.00499
   cost_per_gb_egress: 0.001
@@ -61,35 +61,35 @@
   currency: USD
   pricing_page: https://www.backblaze.com/cloud-storage/pricing
 
-- name: Scaleway Object Storage
-  slug: scaleway-object-storage
+- name: Scaleway
+  slug: scaleway
   cost_per_gb_stored: 0.0146
   cost_per_gb_egress: 0.01
   currency: EUR
   pricing_page: https://www.scaleway.com/en/pricing/storage/
 
-- name: Bunny.net Object Storage
-  slug: bunny-storage
+- name: Bunny.net
+  slug: bunny
   cost_per_gb_stored: 0.01
   cost_per_gb_egress: 0.01
   currency: USD
   pricing_page: https://bunny.net/pricing/
 
-- name: DigitalOcean Object Storage
+- name: DigitalOcean
   slug: digitalocean
   cost_per_gb_stored: 0.02
   cost_per_gb_egress: 0.01
   currency: USD
   pricing_page: https://www.digitalocean.com/pricing/spaces-object-storage
 
-- name: Vultr Object Storage
+- name: Vultr
   slug: vultr
   cost_per_gb_stored: 0.018
   cost_per_gb_egress: 0.010
   currency: USD
   pricing_page: https://www.vultr.com/pricing/#object-storage
 
-- name: Linode Object Storage
+- name: Linode
   slug: linode
   cost_per_gb_stored: 0.02
   cost_per_gb_egress: 0.005
