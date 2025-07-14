@@ -5,11 +5,8 @@ function CostComponent(props: any) {
 
   const [selectedProvider, setSelectedProvider] = createSignal(providers[0]);
 
-  console.log(selectedProvider());
-
   const selectProvider: JSX.EventHandler<HTMLSelectElement, Event> = (event) => {
     const slug = event.currentTarget.value;
-    console.log(slug);
     setSelectedProvider(providers.find(item => item.id === slug));
   };
 
@@ -22,8 +19,8 @@ function CostComponent(props: any) {
           )}
         </For>
       </select>
-      <p>Total storage costs for 100GB: {selectedProvider().data.cost_per_gb_stored * 100}</p>
-      <p>Total egress costs for 100GB: {selectedProvider().data.cost_per_gb_egress * 100}</p>
+      <p>Total storage costs for 100GB: <strong>{(selectedProvider().data.cost_per_gb_stored * 100).toFixed(2)}</strong> {selectedProvider().data.currency}</p>
+      <p>Total egress costs for 100GB: <strong>{(selectedProvider().data.cost_per_gb_egress * 100).toFixed(2)}</strong> {selectedProvider().data.currency}</p>
     </div>
   );
 }
