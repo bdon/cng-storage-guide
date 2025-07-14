@@ -7,7 +7,7 @@ const providers = await getCollection("providers");
 ---
 
 <Layout>
-	<h1>
+	<h1 class="text-3xl">
 		Cloud-Native Geospatial Storage Cheatsheet
 	</h1>
 	<p>
@@ -17,7 +17,9 @@ const providers = await getCollection("providers");
 	<p>
 		S3-compatible object stores can be used with tools like the aws cli and rclone.
 	</p>
+	<h2 class="text-2xl">Cost Estimate</h2>
 	<CostComponent client:only="solid-js" providers={providers}/>
+	<h2 class="text-2xl">Pricing Table</h2>
 	<table>
 		<tbody>
 		{
