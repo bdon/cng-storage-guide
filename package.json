@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "tsc --noEmit && biome check && astro build",
+    "build": "astro sync && tsc --noEmit && biome check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
