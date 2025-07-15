@@ -41,6 +41,17 @@ function CostComponent(props: { providers: Provider[] }) {
 				</strong>{" "}
 				{selectedProvider().data.currency}
 			</p>
+			<p>
+				Total transaction costs for reading 100GB in 5MB chunks:{" "}
+				<strong>
+					{(
+						((selectedProvider().data.cost_per_1k_gets / 1000) *
+							(100 * 1024 * 1024 * 1024)) /
+						(5 * 1024 * 1024)
+					).toFixed(2)}
+				</strong>{" "}
+				{selectedProvider().data.currency}
+			</p>
 		</div>
 	);
 }
