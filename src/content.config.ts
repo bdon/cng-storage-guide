@@ -9,7 +9,7 @@ const providers = defineCollection({
 		cost_per_gb_stored: z.number(),
 		cost_per_gb_egress: z.number(),
 		pricing_page: z.string(),
-		currency: z.string()
+		currency: z.string(),
 	}),
 });
 

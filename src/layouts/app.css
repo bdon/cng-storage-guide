@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Quattro Regular';
-  src: url('/cng-storage-guide/iAWriterQuattroS-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+	font-family: "Quattro Regular";
+	src: url("/cng-storage-guide/iAWriterQuattroS-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
 }
 
 body {
-  font-family: "Quattro Regular", sans-serif;
+	font-family: "Quattro Regular", sans-serif;
 }
