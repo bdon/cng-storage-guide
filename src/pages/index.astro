@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Content } from "../../prose.md";
 import CostComponent from "../components/CostComponent.tsx";
 import Layout from "../layouts/Layout.astro";
 
@@ -10,26 +11,9 @@ const providers = await getCollection("providers");
 	<h1 class="text-3xl font-bold my-8">
 		Cloud-Native Geospatial Storage Cheatsheet
 	</h1>
-	<p>
-		A collaboratively maintained resource to compare cloud storage platforms. <a href="https://github.com/bdon/cng-storage-guide">Source code on GitHub</a>
-	</p>
-	<p>
-		Want to read about formats for publishing to cloud storage? Check out the <a class="text-blue-500 underline" target="_blank" href="https://guide.cloudnativegeo.org">Cloud Native Geospatial Formats Guide.</a>
-	</p>
-	<p>
-		Glossary
-		Egress - cost for moving data outside the provider's cloud to the Internet, such as other cloud platforms or end users. 
-		If you stay within the provider's cloud, these costs are 0.
-
-		Transaction - the cost for a single HTTP request. Providers usually price read (GET) and write (PUT, POST) operations differently.
-	</p>
-	<p>
-		Ideas for other comparison dimensions? examples:
-		<ul>Performance (throughput,latency)</ul>
-		<ul>S3 compatibility</ul>
-		<ul>Number of regions</ul>
-		<ul>Jurisdiction (EU, GDPR, etc)</ul>
-	</p>
+	<div class="prose">
+		<Content/>	
+	</div>
 	<h2 class="text-2xl font-bold my-4">Cost Estimate</h2>
 	<CostComponent client:only="solid-js" providers={providers}/>
 	<h2 class="text-2xl font-bold my-4">Pricing Table</h2>
