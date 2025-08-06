@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { Content } from "../../prose.md";
 import CostComponent from "../components/CostComponent.tsx";
+import TableComponent from "../components/TableComponent.tsx";
 import Layout from "../layouts/Layout.astro";
 
 const providers = await getCollection("providers");
@@ -17,30 +18,8 @@ const providers = await getCollection("providers");
 	<h2 class="text-2xl font-bold my-4">Cost Estimate</h2>
 	<CostComponent client:only="solid-js" providers={providers}/>
 	<h2 class="text-2xl font-bold my-4">Pricing Table</h2>
-	<table class="table-auto">
-		<thead>
-			<tr>
-				<td></td>
-				<td class="px-4">Cost per GB/Month</td>
-				<td class="px-4">Cost per 1000 GETs</td>
-				<td class="px-4">Egress per GB</td>
-				<td class="px-4">currency</td>
-				<td></td>
-			</tr>
-		</thead>
-		<tbody>
-		{
-	    providers.map((provider) => <tr>
-				<td>{provider.data.name}</td>
-				<td class="px-4">{provider.data.cost_per_gb_stored}</td>
-				<td class="px-4">{provider.data.cost_per_1k_gets}</td>
-				<td class="px-4">{provider.data.cost_per_gb_egress}</td>
-				<td class="px-4">{provider.data.currency}</td>
-				<td><a href={provider.data.pricing_page} class="underline text-blue-500" target="_blank">pricing</a></td>
-	    </tr>)
-	  }
-		</tbody>
-	</table>
+	<TableComponent client:only="solid-js" providers={providers}/>
+	
 	<p>
 		Free account-level allowances are not included. 
 	</p>
