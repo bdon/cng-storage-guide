@@ -4,6 +4,7 @@ import {
 	createSolidTable,
 	flexRender,
 	getCoreRowModel,
+	getSortedRowModel,
 } from "@tanstack/solid-table";
 import { createSignal, For, type JSX } from "solid-js";
 
@@ -19,21 +20,25 @@ const defaultColumns: ColumnDef<Provider>[] = [
 		accessorFn: (row) => row.data.cost_per_gb_stored,
 		cell: (info) => info.getValue(),
 		header: "Cost per GB/Month",
+		enableSorting: true,
 	},
 	{
 		accessorFn: (row) => row.data.cost_per_1k_gets,
 		cell: (info) => info.getValue(),
 		header: "Cost per 1000 GETs",
+		enableSorting: true,
 	},
 	{
 		accessorFn: (row) => row.data.cost_per_gb_egress,
 		cell: (info) => info.getValue(),
 		header: "Egress per GB",
+		enableSorting: true,
 	},
 	{
 		accessorFn: (row) => row.data.currency,
 		cell: (info) => info.getValue(),
 		header: "Currency",
+		enableSorting: true,
 	},
 	{
 		accessorFn: (row) => row.data.pricing_page,
@@ -50,12 +55,21 @@ const defaultColumns: ColumnDef<Provider>[] = [
 ];
 
 function TableComponent(props: { providers: Provider[] }) {
+	const [sorting, setSorting] = createSignal([]);
+
 	const table = createSolidTable({
 		get data() {
 			return props.providers;
 		},
 		columns: defaultColumns,
+		state: {
+			get sorting() {
+				return sorting();
+			},
+		},
+		onSortingChange: setSorting,
 		getCoreRowModel: getCoreRowModel(),
+		getSortedRowModel: getSortedRowModel(),
 	});
 
 	return (
@@ -67,13 +81,18 @@ function TableComponent(props: { providers: Provider[] }) {
 							<tr>
 								<For each={headerGroup.headers}>
 									{(header) => (
-										<th>
-											{header.isPlaceholder
-												? null
-												: flexRender(
-														header.column.columnDef.header,
-														header.getContext(),
-													)}
+										<th
+											onClick={header.column.getToggleSortingHandler()}
+											class="cursor-pointer"
+										>
+											{flexRender(
+												header.column.columnDef.header,
+												header.getContext(),
+											)}
+											{{
+												asc: " 🔼",
+												desc: " 🔽",
+											}[header.column.getIsSorted() as string] ?? ""}
 										</th>
 									)}
 								</For>
