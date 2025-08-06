@@ -22,6 +22,7 @@ const providers = await getCollection("providers");
 			<tr>
 				<td></td>
 				<td class="px-4">Cost per GB/Month</td>
+				<td class="px-4">Cost per 1000 GETs</td>
 				<td class="px-4">Egress per GB</td>
 				<td class="px-4">currency</td>
 				<td></td>
@@ -32,6 +33,7 @@ const providers = await getCollection("providers");
 	    providers.map((provider) => <tr>
 				<td>{provider.data.name}</td>
 				<td class="px-4">{provider.data.cost_per_gb_stored}</td>
+				<td class="px-4">{provider.data.cost_per_1k_gets}</td>
 				<td class="px-4">{provider.data.cost_per_gb_egress}</td>
 				<td class="px-4">{provider.data.currency}</td>
 				<td><a href={provider.data.pricing_page} class="underline text-blue-500" target="_blank">pricing</a></td>
