@@ -74,7 +74,7 @@ function TableComponent(props: { providers: Provider[] }) {
 
 	return (
 		<div>
-			<table class="table-auto">
+			<table class="table-auto border-separate border-spacing-x-2">
 				<thead>
 					<For each={table.getHeaderGroups()}>
 						{(headerGroup) => (
